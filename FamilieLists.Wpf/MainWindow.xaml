@@ -12,7 +12,7 @@
         <Label Content="Achternaam:" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtVoornaam" HorizontalAlignment="Left" Height="23" Margin="92,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtAchternaam" HorizontalAlignment="Left" Height="23" Margin="92,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnVoegFamilielidToe" Content="Voeg familielid toe" HorizontalAlignment="Left" Margin="12,109,0,0" VerticalAlignment="Top" Width="245" />
+        <Button x:Name="btnVoegFamilielidToe" Content="Voeg familielid toe" HorizontalAlignment="Left" Margin="12,109,0,0" VerticalAlignment="Top" Width="245" Click="btnVoegFamilielidToe_Click" />
         <ListBox x:Name="lstFamilieLijst" HorizontalAlignment="Left" Height="322" Margin="262,40,0,0" VerticalAlignment="Top" Width="410"/>
         <Button x:Name="btnVerwijderGeselecteerdFamilielidIndex" Content="Verwijder geselecteerd familielid (Index)" HorizontalAlignment="Left" Margin="12,150,0,0" VerticalAlignment="Top" Width="245" />
         <Button x:Name="btnVerwijderGeselecteerdFamilielidValue" Content="Verwijder geselecteerd familielid (Value)" HorizontalAlignment="Left" Margin="12,175,0,0" VerticalAlignment="Top" Width="245" />
