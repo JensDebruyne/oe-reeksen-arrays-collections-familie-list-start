@@ -26,7 +26,6 @@ namespace FamilieLists.Wpf
                 familieLeden.Add(familielidNaam);
                 Properties.Settings.Default.Familieleden = familieLeden;
                 Properties.Settings.Default.Save();
-                backUp = familieLeden;
                 VulLijsten();
                 txtAchternaam.Clear();
                 txtVoornaam.Clear();
@@ -57,10 +56,12 @@ namespace FamilieLists.Wpf
 
         private void btnVerwijderGeselecteerdFamilielidIndex_Click(object sender, RoutedEventArgs e)
         {
+            backUp.Clear();
+            backUp.AddRange(familieLeden);
             if (lstFamilieLijst.SelectedIndex != -1)
             {
                 int index;
-                backUp = familieLeden;
+                
                 index = lstFamilieLijst.SelectedIndex;
                 familieLeden.RemoveAt(index);
                 VulLijsten();
@@ -77,10 +78,11 @@ namespace FamilieLists.Wpf
 
         private void btnVerwijderGeselecteerdFamilielidValue_Click(object sender, RoutedEventArgs e)
         {
+            backUp.Clear();
+            backUp.AddRange(familieLeden);
             if (lstFamilieLijst.SelectedIndex != -1)
             {
                 string familielid;
-                backUp = Properties.Settings.Default.Familieleden;
                 familielid = lstFamilieLijst.SelectedItem.ToString();
                 familieLeden.Remove(familielid);
                 VulLijsten();
@@ -97,7 +99,8 @@ namespace FamilieLists.Wpf
 
         private void btnVerwijderGansDeFamilie_Click(object sender, RoutedEventArgs e)
         {
-            backUp = Properties.Settings.Default.Familieleden;
+            backUp.Clear();
+            backUp.AddRange(Properties.Settings.Default.Familieleden);
             familieLeden = null;
             familieLeden = new List<string>();
             Properties.Settings.Default.Familieleden = familieLeden;
@@ -107,8 +110,9 @@ namespace FamilieLists.Wpf
 
         private void btnHerstel_Click(object sender, RoutedEventArgs e)
         {
-            
-            familieLeden = backUp ;
+
+            familieLeden.Clear();
+            familieLeden.AddRange(backUp);
             Properties.Settings.Default.Familieleden = familieLeden;
             Properties.Settings.Default.Save();
             VulLijsten();
