@@ -22,5 +22,16 @@ namespace FamilieLists.Wpf.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Generic.List<string> Familieleden {
+            get {
+                return ((global::System.Collections.Generic.List<string>)(this["Familieleden"]));
+            }
+            set {
+                this["Familieleden"] = value;
+            }
+        }
     }
 }
